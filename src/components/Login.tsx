@@ -1,7 +1,10 @@
+import { Button } from 'antd';
 import React from 'react';
 
 export const Login = () => {
   return (
-    <div>Login</div>
+    <Button className='h-screen' type="primary" size='large' shape="round">
+      Авторизоваться через Google
+    </Button>
   );
 };

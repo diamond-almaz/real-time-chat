@@ -23,6 +23,7 @@
     ],
     "rules": {
         "no-unused-vars": "warn",
-        "comma-dangle": ["warn", "always-multiline"]
+        "comma-dangle": ["warn", "always-multiline"],
+        "indent": ["error", 2]
     }
 }

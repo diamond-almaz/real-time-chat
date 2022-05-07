@@ -1,29 +1,30 @@
 import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import { Chat } from './components/Chat';
+import { Login } from './components/Login';
 import { privateRoutes, publicRoutes } from './routes';
-import { ROUTES } from './utils/constants';
 
 export const AppRouter = () => {
   const user = false;
   return user
     ? (
       <Routes>
-          {
-              privateRoutes.map(({ path, Component }) => (
-                  <Route key={path} path={path} element={<Component />}/>
-              ))
-          }
-          <Navigate to={ROUTES.chat}/>
+        {
+          privateRoutes.map(({ path, Component }) => (
+            <Route key={path} path={path} element={<Component />}/>
+          ))
+        }
+        <Route path="*" element={<Chat />}/>
       </Routes>
     )
     : (
       <Routes>
-          {
-              publicRoutes.map(({ path, Component }) => (
-                <Route key={path} path={path} element={<Component />}/>
-              ))
-          }
-          <Navigate to={ROUTES.login}/>
+        {
+          publicRoutes.map(({ path, Component }) => (
+            <Route key={path} path={path} element={<Component />}/>
+          ))
+        }
+        <Route path="*" element={<Login />}/>
 
       </Routes>
     );
