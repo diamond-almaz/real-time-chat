@@ -5,3 +5,9 @@
 .ant-menu-item-disabled:hover {
   background-color: transparent !important;
 }
+
+.ant-spin-spinning {
+  position: fixed !important;
+  top: 50%;
+  left: 50%;
+}
